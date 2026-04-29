@@ -1,280 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
-  <title>Информационная безопасность для школьников</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #121212;
-      /* тёмный фон */
-      color: #e0e0e0;
-      /* светлый текст */
-    }
-
-    header {
-      position: fixed;
-      width: 100%;
-      background: #1e1e1e;
-      /* темный фон меню */
-      padding: 15px;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #1abc9c;
-      /* зелёный при наведении */
-    }
-
-    /* Кнопка-меню */
-    .burger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-      transition: 0.3s;
-    }
-
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-
-    /* Анимация бургера в крестик */
-    .burger.toggle div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .burger.toggle div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .burger.toggle div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .burger {
-        display: flex;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 45px;
-        left: 0;
-        width: 100%;
-        background: #1e1e1e;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 0;
-      }
-
-      .nav-links.show {
-        display: flex;
-        animation: slideDown 0.3s ease;
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    }
-
-    section {
-      min-height: 100vh;
-      padding: 15vh 5% 40px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.7s ease;
-      background: #121212;
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h1,
-    h2 {
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #1abc9c;
-      color: #121212;
-      /* тёмный текст на кнопке */
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #16a085;
-      transform: scale(1.05);
-    }
-
-    ul {
-      text-align: left;
-      max-width: 90%;
-      margin: 20px auto;
-      font-size: 1rem;
-      color: #e0e0e0;
-    }
-
-    .section-img {
-      max-width: 450px;
-      width: 70%;
-      height: auto;
-      margin: 20px auto;
-      display: block;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    @media (max-width: 768px) {
-      .section-img {
-        max-width: 300px;
-        width: 90%;
-      }
-    }
-  </style>
+  <title>ИБ для школьников — Главная</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header>
-    <div class="burger" id="burger">
-      <div></div>
-      <div></div>
-      <div></div>
+
+<header>
+  <a class="logo" href="index.html">🔐 КиберЩит</a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  <nav id="nav">
+    <a href="index.html">Главная</a>
+    <a href="internet.html">Интернет</a>
+    <a href="social.html">Соцсети</a>
+    <a href="devices.html">Устройства</a>
+    <a href="quiz.html">Тест</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-badge">Информационная безопасность · 2026</div>
+    <h1>Защити себя<br>в <span>цифровом мире</span></h1>
+    <p>Проект для школьников о том, как безопасно вести себя в интернете, защищать свои аккаунты и устройства от угроз.</p>
+    <img src="img/1slide.jpg" alt="Информационная безопасность" class="hero-img">
+    <a href="internet.html" class="btn btn-primary">Начать изучение →</a>
+  </section>
+
+  <!-- Статистика -->
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-num">95%</div>
+      <div class="stat-label">школьников онлайн каждый день</div>
     </div>
-    <nav class="nav-links" id="nav-links">
-      <a href="#about">О проекте</a>
-      <a href="#internet">Интернет</a>
-      <a href="#social">Соцсети</a>
-      <a href="#devices">Устройства</a>
-    </nav>
-  </header>
+    <div class="stat-item">
+      <div class="stat-num">62%</div>
+      <div class="stat-label">хоть раз переходили по фишинговой ссылке</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">45%</div>
+      <div class="stat-label">не знают, что такое 2FA</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15%</div>
+      <div class="stat-label">сталкивались с кибербуллингом</div>
+    </div>
+  </div>
 
-  <section id="about">
-    <h1>Информационная безопасность для школьников</h1>
-    <img src="img/1slide.jpg" alt="Информационная безопасность" class="section-img">
-    <p>Этот сайт посвящён основам информационной безопасности для школьников.
-    <p>В современном мире интернет является важной частью жизни: мы общаемся, учимся, 
-      совершаем покупки и храним личные данные онлайн.  
-    <p>Однако вместе с удобством появляются и риски — мошенничество, вирусы, утечка информации.</p>
-    <p>Цель проекта — объяснить простыми словами, как защитить свои данные, аккаунты и устройства от возможных угроз.</p>
-    <a href="#internet" class="btn">Перейти к разделам</a>
-  </section>
+  <h2>Что такое информационная безопасность?</h2>
+  <p>Информационная безопасность (ИБ) согласно ГОСТ Р 50922-2006 — это <strong>состояние защищённости информации</strong> от внутренних и внешних угроз. Для обычного пользователя ИБ держится на трёх принципах:</p>
 
-  <section id="internet">
-    <h2>Безопасность в интернете</h2>
-    <img src="img/2slide.jpg" alt="Интернет" class="section-img">
-    <p>Интернет предоставляет огромные возможности, но также содержит потенциальные угрозы. Чтобы снизить риск, важно соблюдать базовые правила:</p>
-    <ul>
-      <li>Использовать сложные пароли (не менее 12 символов, включая буквы, цифры и специальные знаки).</li>
-      <li>Не переходить по подозрительным ссылкам, особенно от незнакомых отправителей.</li>
-      <li>Проверять адрес сайта перед вводом личных данных.</li>
-      <li>Включать двухфакторную аутентификацию для защиты аккаунтов.</li>
-      <p>Менеджеры паролей помогают создавать и хранить сложные пароли в зашифрованном виде, что повышает уровень безопасности.</p>
-    </ul>
-  </section>
+  <div class="threat-grid">
+    <div class="threat-card">
+      <span class="tag tag-info">Принцип 1</span>
+      <h4>Конфиденциальность</h4>
+      <p>Доступ к твоим данным есть только у тех, кому ты сам разрешил — и больше ни у кого.</p>
+    </div>
+    <div class="threat-card">
+      <span class="tag tag-warn">Принцип 2</span>
+      <h4>Целостность</h4>
+      <p>Твои данные не могут быть изменены или уничтожены без твоего ведома.</p>
+    </div>
+    <div class="threat-card">
+      <span class="tag tag-danger">Принцип 3</span>
+      <h4>Доступность</h4>
+      <p>Ты всегда можешь получить доступ к своей информации — никто не может тебя заблокировать.</p>
+    </div>
+  </div>
 
-  <section id="social">
-    <h2>Социальные сети</h2>
-    <img src="img/3slide.jpg" alt="Социальные сети" class="section-img">
-    <p>Социальные сети являются удобным способом общения, но могут представлять угрозу для личной безопасности:</p>
-    <ul>
-      <li>Не публиковать личную информацию (адрес, номер телефона, документы).</li>
-      <li>Проверяй настройки приватности — ограничте доступ к личной информации.</li>
-      <li>Не добавляй незнакомцев в друзья.</li>
-      <p> Всем верить в интернете нельзя</p>
-      <li>При столкновении с кибербуллингом — блокировать пользователя и сообщать администрации.</li>
-      <p>Важно помнить, что любая информация, опубликованная в интернете, может стать доступной другим людям. Поэтому стоит быть осторожным и не делиться лишними данными.</p>
-    </ul>
-  </section>
+  <h2>Почему это важно именно для школьников?</h2>
+  <p>По данным Mediascope (2024), 95% российских школьников в возрасте 12–17 лет ежедневно выходят в интернет, проводя там в среднем 5–7 часов в день. При этом:</p>
+  <ul class="content-list">
+    <li>Только 30% проходили курсы по цифровой грамотности</li>
+    <li>38% сталкивались с попыткой взлома аккаунта</li>
+    <li>25% публиковали номер телефона в открытом доступе</li>
+    <li>23% скачивали пиратское ПО или «взломанные» игры</li>
+    <li>18% становились жертвами кибербуллинга</li>
+  </ul>
 
-  <section id="devices">
-    <h2>Безопасность устройств</h2>
-    <img src="img/4slide.jpg" alt="Компьютер и телефон" class="section-img">
-    <p>Для защиты компьютера и смартфона необходимо соблюдать следующие рекомендации:</p>
-    <ul>
-      <li>Регулярно обновлять операционную систему и приложения.</li>
-      <li>Устанавливать программы только из официальных источников.</li>
-      <li>Использовать антивирусное программное обеспечение.</li>
-      <li>Проверять подозрительные файлы перед открытием.</li>
-      <p>Скачивание нелицензионных программ или “взломанных” версий часто связано с высоким риском заражения устройства вредоносным ПО.</p>
-    </ul>
-  </section>
+  <div class="callout warn">
+    <span class="callout-icon">⚡</span>
+    <p><strong>Разрыв между активностью и грамотностью</strong> — вот главная проблема. Дети активно пользуются интернетом, но не знают правил безопасного поведения в сети, что делает их лёгкой мишенью для мошенников.</p>
+  </div>
 
-  <script>
-    // Плавная прокрутка
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
-      });
-    });
+  <h2>Разделы сайта</h2>
+  <div class="nav-cards">
+    <a class="nav-card" href="internet.html">
+      <span class="nav-card-icon">🌐</span>
+      <span class="nav-card-title">Безопасность в интернете</span>
+      <span class="nav-card-desc">Пароли, фишинг, Wi-Fi, мошенничество</span>
+    </a>
+    <a class="nav-card" href="social.html">
+      <span class="nav-card-icon">📱</span>
+      <span class="nav-card-title">Социальные сети</span>
+      <span class="nav-card-desc">Приватность, кибербуллинг, груминг</span>
+    </a>
+    <a class="nav-card" href="devices.html">
+      <span class="nav-card-icon">💻</span>
+      <span class="nav-card-title">Безопасность устройств</span>
+      <span class="nav-card-desc">Вирусы, антивирусы, обновления</span>
+    </a>
+    <a class="nav-card" href="quiz.html">
+      <span class="nav-card-icon">🧠</span>
+      <span class="nav-card-title">Пройти тест</span>
+      <span class="nav-card-desc">Проверь свои знания по всем темам</span>
+    </a>
+  </div>
 
-    // Анимация появления секций при прокрутке
-    function showSections() {
-      const sections = document.querySelectorAll('section');
-      const triggerBottom = window.innerHeight * 0.85;
+</main>
 
-      sections.forEach(sec => {
-        const boxTop = sec.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          sec.classList.add('show');
-        }
-      });
-    }
+<footer>
+  Проект «Информационная безопасность для школьников» · Тихомиров Артём · МОУ СШ №6 · 2026
+</footer>
 
-    window.addEventListener('scroll', showSections);
-    window.addEventListener('load', showSections);
-
-    // Бургер-меню
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('nav-links');
-
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-      burger.classList.toggle('toggle'); // переключение анимации
-    });
-  </script>
+<script src="script.js"></script>
 </body>
-
 </html>
